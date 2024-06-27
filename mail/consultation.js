@@ -1,4 +1,13 @@
 $(document).ready(function() {
+  // Initialize datetime pickers
+  $('#datepicker').datetimepicker({
+      format: 'L'
+  });
+
+  $('#timepicker').datetimepicker({
+      format: 'LT'
+  });
+
   $('form').on('submit', function(event) {
       event.preventDefault(); // Prevent default form submission
 
