@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = "Thank you, $name. Your request for a consultation on $date at $time has been received. We will contact you at $email regarding $service.";
 
     // Send email
-    $to = "recipient@example.com";  // Replace with your email address
+    $to = "melodee@melodeearmstrong.com";  // Replace with your email address
     $subject = "Consultation Request";
     $body = $message;
     $headers = "From: $email";
