@@ -1,38 +1,20 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Function to sanitize input data
-    function sanitize_input($data) {
-        $data = trim($data);                    // Remove whitespace
-        $data = stripslashes($data);            // Remove backslashes
-        $data = htmlspecialchars($data);        // Convert special characters to HTML entities
-        return $data;
-    }
+    $name = htmlspecialchars(trim($_POST['name']));
+    $email = htmlspecialchars(trim($_POST['email']));
+    $date = htmlspecialchars(trim($_POST['date']));
+    $time = htmlspecialchars(trim($_POST['time']));
+    $service = htmlspecialchars(trim($_POST['service']));
 
-    // Validate and sanitize form inputs
-    $name = sanitize_input($_POST['name']);
-    $email = sanitize_input($_POST['email']);
-    $date = sanitize_input($_POST['date']);
-    $time = sanitize_input($_POST['time']);
-    $service = sanitize_input($_POST['service']);
+    // Debugging information
+    error_log("Form Data: Name = $name, Email = $email, Date = $date, Time = $time, Service = $service");
 
-    // Validate email format
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        die("Invalid email format");
-    }
-
-    // Feedback message
-    $message = "Thank you, $name. Your request for a consultation on $date at $time has been received. We will contact you at $email regarding $service.";
-
-    // Send email
-    $to = "melodee@melodeearmstrong.com";  // Replace with your email address
-    $subject = "Consultation Request";
-    $body = $message;
-    $headers = "From: $email";
-
-    if (mail($to, $subject, $body, $headers)) {
-        echo $message . " Email sent successfully.";  // Return success message including email status
+    // Validation (example)
+    if (empty($name) || empty($email) || empty($date) || empty($time) || $service == "Select A Service") {
+        echo "All fields are required.";
     } else {
-        echo "Failed to send email. Please try again later.";  // Return failure message if email sending fails
+        // Normally, you would process the form data here (e.g., send an email, save to a database)
+        echo "Your request has been received. We will contact you soon.";
     }
 } else {
     echo "Invalid request method.";

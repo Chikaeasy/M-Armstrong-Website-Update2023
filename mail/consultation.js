@@ -20,6 +20,13 @@ $(document).ready(function() {
 
       let isValid = true;
 
+      console.log("Form values:");
+      console.log("Name: " + name);
+      console.log("Email: " + email);
+      console.log("Date: " + date);
+      console.log("Time: " + time);
+      console.log("Service: " + service);
+
       if (name === "") {
           isValid = false;
           alert("Please enter your name.");
@@ -46,18 +53,23 @@ $(document).ready(function() {
           alert("Please select a service.");
       }
 
+      console.log("Is form valid? " + isValid);
+
       if (isValid) {
           $.ajax({
               url: 'submit_form.php',
               type: 'POST',
               data: $(this).serialize(),
               success: function(response) {
+                  console.log("Server response: " + response);
                   alert(response); // Display response from PHP script
               },
               error: function() {
+                  console.log("An error occurred during the AJAX request.");
                   alert('An error occurred. Please try again.'); // Display error message
               }
           });
       }
   });
 });
+
