@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  // Initialize datetime pickers
   $('#datepicker').datetimepicker({
       format: 'L'
   });
@@ -9,23 +8,15 @@ $(document).ready(function() {
   });
 
   $('form').on('submit', function(event) {
-      event.preventDefault(); // Prevent default form submission
+      event.preventDefault();
 
-      // Validate and sanitize form inputs
       const name = $('#name').val().trim();
       const email = $('#email').val().trim();
-      const date = $('#date').val().trim();
-      const time = $('#time').val().trim();
+      const date = $('#datepicker input').val().trim();
+      const time = $('#timepicker input').val().trim();
       const service = $('#service').val();
 
       let isValid = true;
-
-      console.log("Form values:");
-      console.log("Name: " + name);
-      console.log("Email: " + email);
-      console.log("Date: " + date);
-      console.log("Time: " + time);
-      console.log("Service: " + service);
 
       if (name === "") {
           isValid = false;
@@ -53,23 +44,20 @@ $(document).ready(function() {
           alert("Please select a service.");
       }
 
-      console.log("Is form valid? " + isValid);
-
       if (isValid) {
           $.ajax({
               url: 'submit_form.php',
               type: 'POST',
               data: $(this).serialize(),
               success: function(response) {
-                  console.log("Server response: " + response);
-                  alert(response); // Display response from PHP script
+                  alert(response);
               },
               error: function() {
-                  console.log("An error occurred during the AJAX request.");
-                  alert('An error occurred. Please try again.'); // Display error message
+                  alert('An error occurred. Please try again.');
               }
           });
       }
   });
 });
+
 

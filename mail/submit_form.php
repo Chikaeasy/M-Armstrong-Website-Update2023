@@ -6,17 +6,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $time = htmlspecialchars(trim($_POST['time']));
     $service = htmlspecialchars(trim($_POST['service']));
 
-    // Debugging information
-    error_log("Form Data: Name = $name, Email = $email, Date = $date, Time = $time, Service = $service");
-
-    // Validation (example)
+    // Validate input
     if (empty($name) || empty($email) || empty($date) || empty($time) || $service == "Select A Service") {
         echo "All fields are required.";
-    } else {
-        // Normally, you would process the form data here (e.g., send an email, save to a database)
+        exit;
+    }
+
+    // Send email
+    $to = "melodee@melodeearmstrong.com";
+    $subject = "New Consultation Request";
+    $message = "Name: $name\nEmail: $email\nDate: $date\nTime: $time\nService: $service";
+    $headers = "From: noreply@example.com";
+
+    if (mail($to, $subject, $message, $headers)) {
         echo "Your request has been received. We will contact you soon.";
+    } else {
+        echo "An error occurred while sending your request. Please try again later.";
     }
 } else {
     echo "Invalid request method.";
 }
 ?>
+
