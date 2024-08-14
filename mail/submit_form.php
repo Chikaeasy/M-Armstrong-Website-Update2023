@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $to = "melodee@melodeearmstrong.com";
     $subject = "New Consultation Request";
     $message = "Name: $name\nEmail: $email\nDate: $date\nTime: $time\nService: $service";
-    $headers = "From: noreply@example.com";
+    $headers = "From: $email";
 
     if (mail($to, $subject, $message, $headers)) {
         echo "Your request has been received. We will contact you soon.";
