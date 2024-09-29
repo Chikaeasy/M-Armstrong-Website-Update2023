@@ -7698,7 +7698,7 @@ button.bg-dark:focus {
 
 .mb-4,
 .my-4 {
-  margin-bottom: 1.5rem !important;
+  margin-bottom: 1.8rem !important;
 }
 
 .ml-4,
@@ -9916,4 +9916,102 @@ h4, h5, h6 {
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+
+/* Audio Containers */
+.profile-cards .card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.profile-cards .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.profile-audio .audio-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* Maintain aspect ratio (16:9) */
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.profile-audio .audio-container audio {
+  width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.profile-audio .audio-header {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+  width: 100%;
+}
+
+
+/* CSS for national cases cards*/
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-link:hover .card {
+  transform: translateY(-10px); /* Moves the card up by 10px */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Adds a shadow for a floating effect */
+}
+
+/* CSS for the moving banner */
+.moving-banner-container {
+  background-color: #fff; /* background color of the banner */
+  color: #B49C73; /* text color of the banner */
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 40px;
+}
+
+.moving-banner {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll-left 30s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+.page-break {
+  page-break-after: always;
+}
+
+/* CSS for slideshow on sce page*/
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Adjust height as needed */
+}
+.slideshow-image {
+  position: absolute;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  top: 0%;
+  left: 0%;
 }
