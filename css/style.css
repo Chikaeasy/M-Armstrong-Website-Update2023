@@ -10015,3 +10015,11 @@ h4, h5, h6 {
   top: 0%;
   left: 0%;
 }
+/* CSS for law talk carousel*/
+.audio-container {
+  background-size: cover; /* Ensure the background image covers the container */
+  height: 200px; /* Adjust height as needed */
+}
+.carousel-item {
+  text-align: center; /* Center text and content */
+}
