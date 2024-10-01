@@ -229,47 +229,45 @@
                 <div class="row h-100 align-items-center justify-content-center">
                     <div class="col-lg-6 py-5">
                         <div class="rounded p-5 my-5" style="background: rgba(55, 55, 63, .7);">
-                            <iframe src="https://api.leadconnectorhq.com/widget/booking/QNDky8Oo5EvLiLZYUpOc" style="width: 100%;border:none;overflow: hidden;" scrolling="no" id="QNDky8Oo5EvLiLZYUpOc_1720825784718"></iframe><br><script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
-
-
-                            <!-- <h1 class="text-center text-white mb-4">Request a Consultation</h1>
-                            <form method="post" action="submit_form.php">
+                            <h1 class="text-center text-white mb-4">Request a Consultation</h1>
+                            <form id="appointmentForm">
                                 <div class="form-group">
-                                    <input type="text" name="name" class="form-control border-0 p-4" placeholder="Your Name" required="required" />
+                                    <input type="text" name="name" class="form-control border-0 p-4" placeholder="Your Name" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" name="email" class="form-control border-0 p-4" placeholder="Your Email" required="required" />
+                                    <input type="email" name="email" class="form-control border-0 p-4" placeholder="Your Email" required>
                                 </div>
                                 <div class="form-row">
                                     <div class="col-6">
                                         <div class="form-group">
                                             <div class="date" id="datepicker" data-target-input="nearest">
-                                                <input type="text" id="date" name="date" class="form-control border-0 p-4 datetimepicker-input" placeholder="Select Date" data-target="#datepicker" data-toggle="datetimepicker"/>
+                                                <input type="text" id="date" name="date" class="form-control border-0 p-4 datetimepicker-input" placeholder="Select Date" data-target="#datepicker" data-toggle="datetimepicker" required>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
                                             <div class="time" id="timepicker" data-target-input="nearest">
-                                                <input type="text" name="time" class="form-control border-0 p-4 datetimepicker-input" placeholder="Select Time" data-target="#timepicker" data-toggle="datetimepicker"/>
+                                                <input type="text" name="time" class="form-control border-0 p-4 datetimepicker-input" placeholder="Select Time" data-target="#timepicker" data-toggle="datetimepicker" required>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <select name="service" id="service"  class="custom-select border-0 px-4" style="height: 47px;">
-                                        <option selected>Select A Service</option>
-                                        <option value="1">Business Litigation</option>
-                                        <option value="2">Criminal Defense</option>
-                                        <option value="3">Personal Injury & Wrongful Death</option>
-                                        <option value="4">Marriage and Weddings</option>
-                                        <option value="5">Mediation</option>
+                                    <select name="service" id="service" class="custom-select border-0 px-4" style="height: 47px;" required>
+                                        <option value="">Select A Service</option>
+                                        <option value="Business Litigation">Business Litigation</option>
+                                        <option value="Criminal Defense">Criminal Defense</option>
+                                        <option value="Personal Injury & Wrongful Death">Personal Injury & Wrongful Death</option>
+                                        <option value="Marriage and Weddings">Marriage and Weddings</option>
+                                        <option value="Mediation">Mediation</option>
                                     </select>
                                 </div>
                                 <div>
                                     <button class="btn btn-primary btn-block border-0 py-3" type="submit">Let's Meet!</button>
                                 </div>
-                            </form> -->
+                            </form>
+                            <div id="formMessage" class="mt-3 text-center text-white"></div>
                         </div>
                     </div>
                 </div>
@@ -491,6 +489,7 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="mail/consultation.js"></script>
+    <script src="mail/appointment.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="lib/banner/scroll.js"></script>
     <script src="lib/easing/easing.min.js"></script>
