@@ -10023,7 +10023,7 @@ h4, h5, h6 {
   background-image: url('i');
   background-size: cover;
   background-position: center;
-  min-height: 300px;
+  min-height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
