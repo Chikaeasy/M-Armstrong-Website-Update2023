@@ -10015,26 +10015,30 @@ h4, h5, h6 {
   top: 0%;
   left: 0%;
 }
-/* CSS for law talk carousel*/
-.carousel-item {
-  transition: transform 0.6s ease-in-out;
+/* Ensure the carousel doesn't get too wide on large screens */
+.carousel {
+  max-width: 800px;
+  margin: 0 auto;
 }
-.audio-container {
-  background-image: url('i');
-  background-size: cover;
-  background-position: center;
-  min-height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+/* Style the carousel caption for better readability */
+.carousel-caption {
+  background-color: rgba(0,0,0,0.7);
+  padding: 20px;
+  border-radius: 5px;
 }
-.carousel-control-prev,
-.carousel-control-next {
-  width: 5%;
+
+/* Ensure the audio controls are visible on the image */
+.position-absolute audio {
+  background-color: rgba(255,255,255,0.7);
+  border-radius: 5px;
+  padding: 5px;
 }
+
+/* Improve visibility of carousel controls on light backgrounds */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0,0,0,0.5);
   border-radius: 50%;
   padding: 10px;
 }
